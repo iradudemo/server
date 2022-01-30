@@ -7,3 +7,4 @@ const contact = mongoose.Schema({
 });
 
 module.exports = mongoose.model('Contact', contact);
+
