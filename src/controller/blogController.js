@@ -18,7 +18,7 @@ class BlogController {
     } else {
       const articles = new Article({
         title: req.body.title.trim(),
-        articleBody: req.body.articleBody.trim(),
+        ticleBodyar: req.body.articleBody.trim(),
         imageUrl: req.body.imageUrl.trim(),
       });
       await articles.save();

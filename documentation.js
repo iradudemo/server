@@ -83,7 +83,7 @@ module.exports = {
           },
         ],
         tags: ['BlogPost'],
-        summary: 'To post article',
+        summary: 'Post an article',
         description: 'Create users',
         parameters: [],
         requestBody: {
@@ -93,10 +93,10 @@ module.exports = {
                 $ref: '#/components/schemas/Blog',
               },
               example: {
-                Title: 'The New Turing Omnibus',
-                Body: 'Alexander K. Dewdney',
-                ImageLink:
-                  'https://www.google.com/search?q=image&sxsrf=APq-WBtK50svBCcQkDbGn7EtidO55wEnSg:1643745123363&tbm=isch&source=iu&ictx=1&vet=1&fir=gxFxsvFBmxeZ9M%252C0JWe7yDOKrVFAM%252C_%253BqXynBYpZpHkhWM%252C4O2GvGuD-Cf09M%252C_%253BMOAYgJU89sFKnM%252CygIoihldBPn-LM%252C_%253BtTplitM2kjOQtM%252C-UStXW0dQEx4SM%252C_%253B2DNOEjVi-CBaYM%252CAOz9-XMe1ixZJM%252C_%253Bl5RllJHFLw5NyM%252CLOSptVP0p_ZwUM%252C_%253BA4G7eW2zetaunM%252Cl3NoP295SYrYvM%252C_%253BbDjlNH-20Ukm8M%252CG9GbNX6HcZ2O_M%252C_%253Bz4_uU0QB2pe-SM%252C7SySw5zvOgPYAM%252C_%253BsmRkxzhk74wASM%252CbUbrhOtxELp8CM%252C_%253BxE4uU8uoFN00aM%252CpEU77tdqT8sGCM%252C_%253BgOUAFhrbQ2nYQM%252COXvyXJop1qSGqM%252C_&usg=AI4_-kQONLnsECQfkpkg0bbsHJMrdYlKOg&sa=X&ved=2ahUKEwi5-rbho9_1AhWQnxQKHYYpCRgQ9QF6BAgFEAE#imgrc=gxFxsvFBmxeZ9M',
+                title: 'The New Turing Omnibus',
+                articleBody: 'Earth version ',
+                imageUrl:
+                  'https://www.pexels.com/photo/hands-with-latex-gloves-holding-a-globe-with-a-face-mask-4167544/',
               },
             },
           },

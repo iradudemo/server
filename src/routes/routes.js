@@ -7,6 +7,8 @@ import blogController from '../controller/blogController';
 
 const router = express.Router();
 
+
+
 router.post('/message', contactController.sendMessage);
 router.get('/message', authRoute, contactController.readAllMessage);
 router.get('/message/:id', authRoute, contactController.readSingleMessage);
@@ -15,6 +17,7 @@ router.post("/user/register", UserController.createUser)
 router.get("/user",authRoute,UserController.findAllUsers)
 router.post("/user/login",UserController.login)
 router.post('/post', authRoute, blogController.createArticle);
+
 router.get('/post/:id', blogController.getSingleArticle);
 router.get('/post', blogController.getAllArticle);
 router.delete('/post/:id', authRoute, blogController.deleteArticle);
