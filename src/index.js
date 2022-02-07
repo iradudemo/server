@@ -9,24 +9,22 @@ import swaggerJsDoc from 'swagger-jsdoc';
 dotenv.config();
 const app = express();
 
-const options = {
-  definition: {
-    openapi: '3.0.0',
+const swaggerOptions = {
+  swaggerDefinition: {
     info: {
-      title: 'My-Blog Api',
+      title: 'Backend to my brand',
       version: '1.0.0',
       description:
-        'My-Blog api is background engine for my portfolio website. it runs on NodeJs using MongoDB as database with Mongoose as the ORM. I am using JWT for handling authentications and JOI for Validating inputs from the user before they are sent to the server and Bcrypt for hashing passwords stored in the database.',
-    },
-    servers: [
-      {
-        url: 'http://127.0.0.1:5000',
+        'This api is the backend of my brand website. I develop it with NodeJs using Mongo database with Mongoose as the ORM. I am using JWT for authentications and Validate form from the user with JOI before they are sent to the server and also i use Bcrypt for hashing passwords stored in the database. and this api can be tested in the postman and mocha',
+      contact: {
+        name: 'Jean Claude Iradukunda',
       },
-    ],
+      servers: ['http://127.0.0.1:5001'],
+    },
   },
   apis: ['./routes/*.js'],
 };
-const specs = swaggerJsDoc(options);
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
 // Import Routes
 
@@ -54,8 +52,41 @@ app.use('/api', article);
 app.use('/api', user);
 app.use('/', swaggerUI.serve, swaggerUI.setup(documentation));
 
+/**
+ * @swagger
+ * /post:
+ *  get:
+ *      description: use to request all posts
+ *      responses:
+ *          '200'
+ *
+ *
+ * components:
+ *   schemas:
+ *     post:
+ *       type: object
+ *       required:
+ *         - title
+ *         - author
+ *       properties:
+ *         id:
+ *           type: string
+ *           description: The auto-generated id of the book
+ *         title:
+ *           type: string
+ *           description: The book title
+ *         author:
+ *           type: string
+ *           description: The book author
+ *       example:
+ *         id: d5fE_asz
+ *         title: The New Turing Omnibus
+ *         author: Alexander K. Dewdney
+ *
+ */
+
 //port connection
-const port = process.env.PORT;
+const port = process.env.PORT || 5001;
 app.listen(port, () => {
   console.log(`server running on port:${port}`);
 });
