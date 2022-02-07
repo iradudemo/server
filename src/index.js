@@ -50,7 +50,7 @@ app.use(express.json());
 app.use('/api', contact);
 app.use('/api', article);
 app.use('/api', user);
-app.use('/', swaggerUI.serve, swaggerUI.setup(documentation));
+app.use('/docs', swaggerUI.serve, swaggerUI.setup(documentation));
 
 /**
  * @swagger
